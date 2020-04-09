@@ -1,0 +1,21 @@
+<h1 class="animated fadeIn">{{ pokemon.name | uppercase }} <small>{{ pokemon.spawn_time }}</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-4">
+        <img [src]="pokemon.img" class="imgPokemon" alt="pokemon.name">
+        <br><br>
+        <a [routerLink]="['/pokemones']" class="btn btn-outline-danger btn-block"> Regresar </a>
+    </div>
+    <div class="col-md-8">
+        <h3>{{ pokemon.name }}</h3>
+        <hr>
+        <p>
+            {{ pokemon.bio }}
+        </p>
+        <div>
+            <img *ngIf="pokemon.type == 'Grass'" class="img-logo" src="assets/img/Grass.png" [alt]="pokemon.type">
+            <img *ngIf="pokemon.type == 'Fire'" class="img-logo" src="assets/img/Fire.png" [alt]="pokemon.type">
+        </div>
+    </div>
+</div>
